@@ -1,0 +1,14 @@
+version: '2.1'
+
+services:
+  webdis:
+    extends:
+      file: services.yml
+      service: webdis-pkg
+    links:
+      - redis
+
+  redis:
+    image: redis:3.2.6
+    expose: 
+      - "6379"

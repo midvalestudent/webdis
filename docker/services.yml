@@ -2,15 +2,8 @@ version: '2.1'
 
 services:
   webdis-pkg:
+    image: webdis:0.1.2
     build:
       context: .
-      image: webdis:0.1.2
       args:
         WEBDIS_VERSION: 0.1.2
-    links:
-      - redis
-
-  redis:
-    image: redis:3.2.6
-    expose: 
-      - "6379"
